@@ -188,15 +188,17 @@ void timer(int t)//UNTUK MENGGERAKKAN BENDA
     } else if(gerak < -20){
         atas = true;
     }
-	
+
  glutPostRedisplay();
-//kecepatan mobil berbanding terbalik 
+//kecepatan mobil berbanding terbalik
 //semakin besar nilai glutTimerFunc jika ingin mengganti kecepatan
 //silahkan ganti angka 50 di bawah ini, misal 100 mobil akan semakin lambat
 //dibawah 50 mobil akan semakin cepat
  glutTimerFunc(50,timer,0);
 }
 
+
+//window
 int main(int argc, char **argv){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -211,5 +213,7 @@ int main(int argc, char **argv){
 	glutMotionFunc(mouseMotion);
     glutReshapeFunc(ukur);
     glutMainLoop();
-} 
- 
+}
+
+
+
