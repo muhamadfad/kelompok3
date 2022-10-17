@@ -39,6 +39,8 @@ int gerak = 0;
 bool atas = true;
 
 
+
+
 //Deklarasi pengaturan lembaran kerja agar Gambar 3d yang kita buat saat diputar atau di geser tidak kemana mana
 void ukur(int lebar, int tinggi){
 if(tinggi==0) tinggi=1;
@@ -186,6 +188,7 @@ void timer(int t)//UNTUK MENGGERAKKAN BENDA
     } else if(gerak < -20){
         atas = true;
     }
+	
  glutPostRedisplay();
 //kecepatan mobil berbanding terbalik 
 //semakin besar nilai glutTimerFunc jika ingin mengganti kecepatan
