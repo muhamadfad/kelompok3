@@ -20,7 +20,8 @@ void lingkarang (int r, int a, int x_tgh, int y_tgh){
     for (i=0;i<=360;i++){
         float sdt=i*(2*PI/a);
         float x=x_tgh+r*cos(sdt);
-        float y=y_tgh+r*sin(sdt);
+        float y=y_tgh+r*sin(sdt)
+        ;
     glVertex2f(x,y);
     }
     glEnd();
@@ -37,8 +38,6 @@ bool mouseDown = false;
 //DEKLARASI UNTUK MEMBUAT BENDA BERGERAK
 int gerak = 0;
 bool atas = true;
-
-
 
 
 //Deklarasi pengaturan lembaran kerja agar Gambar 3d yang kita buat saat diputar atau di geser tidak kemana mana
@@ -155,11 +154,12 @@ glVertex3f(-30,-68,-55);
 glEnd();
 
 //garis 1
-glLineWidth(10);
-glBegin(GL_LINES);
-glColor3f(0,1,0);
-glVertex3i(-30,30,68);
-glVertex3i(30,30,68);
+glBegin(GL_POLYGON);
+glColor3f(1,0,1);
+glVertex3f(-30,68,68.5);
+glVertex3f(30,68,68.5);
+glVertex3f(30,-6,68.5);
+glVertex3f(-30,-6,68.5);
 glEnd();
 
 //garis 2
@@ -188,7 +188,6 @@ void timer(int t)//UNTUK MENGGERAKKAN BENDA
     } else if(gerak < -20){
         atas = true;
     }
-
  glutPostRedisplay();
 //kecepatan mobil berbanding terbalik
 //semakin besar nilai glutTimerFunc jika ingin mengganti kecepatan
@@ -197,8 +196,6 @@ void timer(int t)//UNTUK MENGGERAKKAN BENDA
  glutTimerFunc(50,timer,0);
 }
 
-
-//window
 int main(int argc, char **argv){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -214,6 +211,3 @@ int main(int argc, char **argv){
     glutReshapeFunc(ukur);
     glutMainLoop();
 }
-
-
-
