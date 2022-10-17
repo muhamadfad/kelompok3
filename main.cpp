@@ -208,4 +208,4 @@ int main(int argc, char **argv){
 	glutMotionFunc(mouseMotion);
     glutReshapeFunc(ukur);
     glutMainLoop();
-}
+} 
