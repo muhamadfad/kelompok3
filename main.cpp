@@ -187,7 +187,7 @@ void timer(int t)//UNTUK MENGGERAKKAN BENDA
         atas = true;
     }
  glutPostRedisplay();
-//kecepatan mobil berbanding terbalik
+//kecepatan mobil berbanding terbalik 
 //semakin besar nilai glutTimerFunc jika ingin mengganti kecepatan
 //silahkan ganti angka 50 di bawah ini, misal 100 mobil akan semakin lambat
 //dibawah 50 mobil akan semakin cepat
