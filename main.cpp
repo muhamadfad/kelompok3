@@ -13,6 +13,18 @@ void handleKeypress(unsigned char key, int x, int y) {
             exit(0);
     }
 }
+float sdt = 0;
+int i,n;
+void lingkarang (int r, int a, int x_tgh, int y_tgh){
+    glBegin(GL_POLYGON);
+    for (i=0;i<=360;i++){
+        float sdt=i*(2*PI/a);
+        float x=x_tgh+r*cos(sdt);
+        float y=y_tgh+r*sin(sdt);
+    glVertex2f(x,y);
+    }
+    glEnd();
+}
 
 
 //Deklarasi fungsi Mouse agar gambar 3d dapat diputar putar menggunakan Mouse
@@ -140,6 +152,24 @@ glVertex3f(30,-68,-55);
 glVertex3f(-30,-68,-55);
 glEnd();
 
+//garis 1
+glLineWidth(10);
+glBegin(GL_LINES);
+glColor3f(0,1,0);
+glVertex3i(-30,30,68);
+glVertex3i(30,30,68);
+glEnd();
+
+//garis 2
+glLineWidth(10);
+glBegin(GL_LINES);
+glColor3f(0,1,0);
+glVertex3i(-30,40,68);
+glVertex3i(30,40,68);
+glEnd();
+
+
+
 glPushMatrix();
 glPopMatrix();
 glutSwapBuffers();
@@ -178,7 +208,4 @@ int main(int argc, char **argv){
 	glutMotionFunc(mouseMotion);
     glutReshapeFunc(ukur);
     glutMainLoop();
-
-
-
 }
