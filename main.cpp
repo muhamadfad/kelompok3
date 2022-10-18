@@ -6,7 +6,6 @@
 #define PI 3.14
 
 
-
 //Called when a key is pressed
 void handleKeypress(unsigned char key, int x, int y) {
     switch (key) {
@@ -28,7 +27,6 @@ void lingkarang (int r, int a, int x_tgh, int y_tgh){
     }
     glEnd();
 }
-
 
 
 //Deklarasi fungsi Mouse agar gambar 3d dapat diputar putar menggunakan Mouse
@@ -53,13 +51,9 @@ glTranslatef(0,0,-400);// jarak object dari lembaran kerja
 glMatrixMode(GL_MODELVIEW);
 }
 
-
 //membuat background
-
-
 void myinit(void){
-glClearColor (1.0, 1.0, 1.0, 1.0);
-
+glClearColor (0.0, 0.0, 0.0, 0.0);
 
 glMatrixMode(GL_PROJECTION);
 glEnable(GL_DEPTH_TEST);
@@ -101,6 +95,11 @@ xrot = y + ydiff;
 glutPostRedisplay();
 }
 }
+void setPixel(GLint xCoordinate, GLint yCoordinate) { glBegin(GL_POINTS);
+glVertex2i(xCoordinate,yCoordinate);
+glEnd();
+glFlush();
+ }
 
 //Dibawah ini dimulai koding untuk membuat object
 void tampilan(void){
@@ -162,7 +161,6 @@ glVertex3f(-30,-68,-55);
 glEnd();
 
 
-
 //GARIS 1
 glBegin(GL_POLYGON);
 glColor3f(0.6,0.6,0.6);
@@ -174,7 +172,7 @@ glEnd();
 
 //GARIS 2
 glBegin(GL_POLYGON);
-glColor3f(0.7,0.6,0.6);
+glColor3f(0.6,0.6,0.6);
 glVertex3f(-26,40,69);
 glVertex3f(26,40,69);
 glVertex3f(26,37,69);
@@ -189,16 +187,46 @@ glVertex3f(26,30,69);
 glVertex3f(26,27,69);
 glVertex3f(-26,27,69);
 glEnd();
+//buat tombol power linkaran
+glColor3f(0.7,0,0);
+lingkarang(10,20,0,-50);
+//garis samping kiri
+glBegin(GL_QUADS);
+glColor3f(0.91,0.91,0.91);
+glVertex3f(-30,68,68);
+glVertex3f(-26,68,68);
+glVertex3f(-26,-68,68);
+glVertex3f(-30,-68,68);
+glEnd();
+//garis samping kanan
+glBegin(GL_QUADS);
+glColor3f(1,1,1);
+glVertex3f(30,68,68);
+glVertex3f(26,68,68);
+glVertex3f(26,-68,68);
+glVertex3f(30,-68,68);
+glEnd();
 
+glBegin(GL_QUADS);
+glColor3f(0.91,0.91,0.91);
+glVertex3f(30,68,68);
+glVertex3f(-26,68,68);
+glVertex3f(-26,64,68);
+glVertex3f(30,64,68);
+glEnd();
 
+glBegin(GL_QUADS);
+glColor3f(0.95,0.95,0.95);
+glVertex3f(30,-68,68);
+glVertex3f(-26,-68,68);
+glVertex3f(-26,-64,68);
+glVertex3f(30,-64,68);
+glEnd();
 
 glPushMatrix();
 glPopMatrix();
 glutSwapBuffers();
 }
-
-
-
 
 int main(int argc, char **argv){
 	glutInit(&argc, argv);
@@ -207,23 +235,16 @@ int main(int argc, char **argv){
     glutInitWindowSize(750, 600);
     glutCreateWindow("MEMBUAT CPU");
     myinit();
-
-
     glutDisplayFunc(tampilan);
-
 	glutMouseFunc(mouse);
     glutKeyboardFunc(handleKeypress);
-
-    glutDisplayFunc(tampilan);
-	glutMouseFunc(mouse);
-
 	glutMotionFunc(mouseMotion);
     glutReshapeFunc(ukur);
     glutMainLoop();
 }
 
-
 //E1E121044_ADZA AULIA SALSABITA (MEMBUAT LIBRARY,BACKGROUND,DAN FUNGSI ESC)
 //E1E121042_TOGA ABDI HAYAT (MEMBUAT OBJECT KUBUS DAN FUNGSI GERAKAN MOUSE)
 //E1E121022_ANYA SALSABILA_MENGUBAH KUBUS MENJADI BALOK
 //E1E121072_MUHAMAD FADLI_MEMBUAT 3 POLIGON///
+//E1E121002_Fadit Al Fauzan_MEMBUAT LINGKARAN UNTUK TOMBOL POWER
