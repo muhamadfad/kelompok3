@@ -82,53 +82,53 @@ glRotatef(yrot, 0,1,0);
 glPushMatrix();
 
 glTranslatef( gerak, 0,0);//UNTUK MENGGERAKKAN BENDA
-//KUBUS BAG 1
+//KUBUS BAG 1 Merah
 glBegin(GL_POLYGON);
-glColor3f(0,0,0);
-glVertex3f(-40,-40,40);
-glVertex3f(40,-40,40);
-glVertex3f(40,-40,-40);
-glVertex3f(-40,-40,-40);
+glColor3f(1,0,0);
+glVertex3f(-30,-68,68); //kiri atas
+glVertex3f(30,-68,68); //ksnsn stss
+glVertex3f(30,-68,-55); //kanan bawah
+glVertex3f(-30,-68,-55); // kiri bawah
 glEnd();
-//KUBUS BAG 2
+//KUBUS BAG 2 Hijau
 glBegin(GL_POLYGON);
-glColor3f(0,0,0);
-glVertex3f(40,-40,40);
-glVertex3f(40,40,40);
-glVertex3f(40,40,-40);
-glVertex3f(40,-40,-40);
+glColor3f(0,1,0);
+glVertex3f(30,-68,68);
+glVertex3f(30,68,68);
+glVertex3f(30,68,-55);
+glVertex3f(30,-68,-55);
 glEnd();
-//KUBUS BAG 3
+//KUBUS BAG 3 Biru
 glBegin(GL_POLYGON);
-glColor3f(0,0,0);
-glVertex3f(-40,-40,40);
-glVertex3f(-40,40,40);
-glVertex3f(-40,40,-40);
-glVertex3f(-40,-40,-40);
+glColor3f(0,0,1);
+glVertex3f(-30,-68,68);
+glVertex3f(-30,68,68);
+glVertex3f(-30,68,-55);
+glVertex3f(-30,-68,-55);
 glEnd();
-//KUBUS BAG 4
+//KUBUS BAG 4 Kuning
 glBegin(GL_POLYGON);
-glColor3f(0,0,0);
-glVertex3f(-40,40,40);
-glVertex3f(40,40,40);
-glVertex3f(40,40,-40);
-glVertex3f(-40,40,-40);
+glColor3f(1,1,0);
+glVertex3f(-30,68,68);
+glVertex3f(30,68,68);
+glVertex3f(30,68,-55);
+glVertex3f(-30,68,-55);
 glEnd();
-//KUBUS BAG 5
+//KUBUS BAG 5 Biru Muda
 glBegin(GL_POLYGON);
-glColor3f(0,0,0);
-glVertex3f(-40,40,40);
-glVertex3f(40,40,40);
-glVertex3f(40,-40,40);
-glVertex3f(-40,-40,40);
+glColor3f(0,1,1);
+glVertex3f(-30,68,68);
+glVertex3f(30,68,68);
+glVertex3f(30,-68,68);
+glVertex3f(-30,-68,68);
 glEnd();
-//KUBUS BAG 6
+//KUBUS BAG 6 Ungu
 glBegin(GL_POLYGON);
-glColor3f(0,0,0);
-glVertex3f(-40,40,-40);
-glVertex3f(40,40,-40);
-glVertex3f(40,-40,-40);
-glVertex3f(-40,-40,-40);
+glColor3f(1,0,1);
+glVertex3f(-30,68,-55);
+glVertex3f(30,68,-55);
+glVertex3f(30,-68,-55);
+glVertex3f(-30,-68,-55);
 glEnd();
 
 glPushMatrix();
@@ -149,3 +149,6 @@ int main(int argc, char **argv){
     glutReshapeFunc(ukur);
     glutMainLoop();
 }
+//E1E121044_ADZA AULIA SALSABITA (MEMBUAT LIBRARY,BACKGROUND,DAN FUNGSI ESC)
+//E1E121042_TOGA ABDI HAYAT (MEMBUAT OBJECT KUBUS DAN FUNGSI GERAKAN MOUSE)
+//E1E121022_ANYA SALSABILA_MENGUBAH KUBUS MENJADI BALOK
