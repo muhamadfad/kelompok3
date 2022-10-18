@@ -108,7 +108,7 @@ glPushMatrix();
 glTranslatef( gerak, 0,0);//UNTUK MENGGERAKKAN BENDA
 //KUBUS BAG 1 Merah
 glBegin(GL_POLYGON);
-glColor3f(1,0,0);
+glColor3f(0.2,0,0);
 glVertex3f(-30,-68,68); //kiri atas
 glVertex3f(30,-68,68); //kanan stss
 glVertex3f(30,-68,-55); //kanan bawah
@@ -116,7 +116,7 @@ glVertex3f(-30,-68,-55); // kiri bawah
 glEnd();
 //KUBUS BAG 2 Hijau
 glBegin(GL_POLYGON);
-glColor3f(0,1,0);
+glColor3f(0.6,0.6,0.6);
 glVertex3f(30,-68,68);
 glVertex3f(30,68,68);
 glVertex3f(30,68,-55);
@@ -124,7 +124,7 @@ glVertex3f(30,-68,-55);
 glEnd();
 //KUBUS BAG 3 Biru
 glBegin(GL_POLYGON);
-glColor3f(1,1,0);
+glColor3f(0.6,0.6,0.6);
 glVertex3f(-30,-68,68);
 glVertex3f(-30,68,68);
 glVertex3f(-30,68,-55);
@@ -141,7 +141,7 @@ glEnd();
 
 //KUBUS BAG 5 Biru Muda
 glBegin(GL_POLYGON);
-glColor3f(0,1,1);
+glColor3f(0.3,0.3,0.3);
 glVertex3f(-26,64,68);
 glVertex3f(26,64,68);
 glVertex3f(26,-64,68);
@@ -149,7 +149,7 @@ glVertex3f(-26,-64,68);
 glEnd();
 //KUBUS BAG 6 Ungu
 glBegin(GL_POLYGON);
-glColor3f(1,0,1);
+glColor3f(0.7,0.7,0.7);
 glVertex3f(-30,68,-55);
 glVertex3f(30,68,-55);
 glVertex3f(30,-68,-55);
@@ -266,4 +266,5 @@ int main(int argc, char **argv){
 //E1E121072_MUHAMAD FADLI_MEMBUAT 3 POLIGON///
 //E1E121002_Fadit Al Fauzan_MEMBUAT LINGKARAN UNTUK TOMBOL POWER
 //E1E121098_Zahra Maharani Aulia_MEMBUAT Bingkai
-//E1E121072_MUHAMAD FADLI_MEMBUAT Animasi bergerak///
+//E1E121072_MUHAMAD FADLI_MEMBUAT Animasi bergerak
+//E1E116098_Andi Sahrul Mubarak Merubah warna
