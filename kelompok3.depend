@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1666102783 source:d:\kuliah\semester 3\grafika komputer\kelompok3\main.cpp
+	<math.h>
+	<GL/glut.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
