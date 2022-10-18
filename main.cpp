@@ -95,11 +95,6 @@ xrot = y + ydiff;
 glutPostRedisplay();
 }
 }
-void setPixel(GLint xCoordinate, GLint yCoordinate) { glBegin(GL_POINTS);
-glVertex2i(xCoordinate,yCoordinate);
-glEnd();
-glFlush();
- }
 
 //Dibawah ini dimulai koding untuk membuat object
 void tampilan(void){
@@ -129,7 +124,7 @@ glVertex3f(30,-68,-55);
 glEnd();
 //KUBUS BAG 3 Biru
 glBegin(GL_POLYGON);
-glColor3f(0,0,1);
+glColor3f(1,1,0);
 glVertex3f(-30,-68,68);
 glVertex3f(-30,68,68);
 glVertex3f(-30,68,-55);
@@ -137,7 +132,7 @@ glVertex3f(-30,-68,-55);
 glEnd();
 //KUBUS BAG 4 Kuning
 glBegin(GL_POLYGON);
-glColor3f(1,1,0);
+glColor3f(0.7,0.7,0.7);
 glVertex3f(-30,68,68);
 glVertex3f(30,68,68);
 glVertex3f(30,68,-55);
@@ -160,6 +155,7 @@ glVertex3f(30,68,-55);
 glVertex3f(30,-68,-55);
 glVertex3f(-30,-68,-55);
 glEnd();
+
 
 
 //GARIS 1
@@ -223,43 +219,28 @@ glVertex3f(-26,-68,68);
 glVertex3f(-26,-64,68);
 glVertex3f(30,-64,68);
 glEnd();
-
-//garis samping kiri
-glBegin(GL_QUADS);
-glColor3f(0.91,0.91,0.91);
-glVertex3f(-30,68,68);
-glVertex3f(-26,68,68);
-glVertex3f(-26,-68,68);
-glVertex3f(-30,-68,68);
-glEnd();
-//garis samping kanan
-glBegin(GL_QUADS);
-glColor3f(1,1,1);
-glVertex3f(30,68,68);
-glVertex3f(26,68,68);
-glVertex3f(26,-68,68);
-glVertex3f(30,-68,68);
-glEnd();
-
-glBegin(GL_QUADS);
-glColor3f(0.91,0.91,0.91);
-glVertex3f(30,68,68);
-glVertex3f(-26,68,68);
-glVertex3f(-26,64,68);
-glVertex3f(30,64,68);
-glEnd();
-
-glBegin(GL_QUADS);
-glColor3f(0.95,0.95,0.95);
-glVertex3f(30,-68,68);
-glVertex3f(-26,-68,68);
-glVertex3f(-26,-64,68);
-glVertex3f(30,-64,68);
-glEnd();
-
 glPushMatrix();
 glPopMatrix();
 glutSwapBuffers();
+}
+void timer(int t)//UNTUK MENGGERAKKAN BENDA
+{
+    if (atas){
+        gerak += 1;
+    } else {
+        gerak -= 1;
+    }
+    if (gerak > 20) {
+        atas = false;
+    } else if(gerak < -20){
+        atas = true;
+    }
+ glutPostRedisplay();
+//kecepatan mobil berbanding terbalik
+//semakin besar nilai glutTimerFunc jika ingin mengganti kecepatan
+//silahkan ganti angka 50 di bawah ini, misal 100 mobil akan semakin lambat
+//dibawah 50 mobil akan semakin cepat
+ glutTimerFunc(50,timer,0);
 }
 
 int main(int argc, char **argv){
@@ -269,7 +250,9 @@ int main(int argc, char **argv){
     glutInitWindowSize(750, 600);
     glutCreateWindow("MEMBUAT CPU");
     myinit();
+
     glutDisplayFunc(tampilan);
+    glutTimerFunc(1,timer,0);//UNTUK MENGGERAKKAN BENDA
 	glutMouseFunc(mouse);
     glutKeyboardFunc(handleKeypress);
 	glutMotionFunc(mouseMotion);
@@ -283,4 +266,4 @@ int main(int argc, char **argv){
 //E1E121072_MUHAMAD FADLI_MEMBUAT 3 POLIGON///
 //E1E121002_Fadit Al Fauzan_MEMBUAT LINGKARAN UNTUK TOMBOL POWER
 //E1E121098_Zahra Maharani Aulia_MEMBUAT Bingkai
-
+//E1E121072_MUHAMAD FADLI_MEMBUAT Animasi bergerak///
