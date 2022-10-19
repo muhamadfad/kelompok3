@@ -95,7 +95,56 @@ xrot = y + ydiff;
 glutPostRedisplay();
 }
 }
+//Algoritma DDA
+void dda(int i, int j, int a, int k, int l, int b) {
+	int x1, y1, x2, y2, z1, z2;
+	float x,y,dx, dy, steps, x_inc, y_inc;
+	//tentukan titik awal dan akhir
+	x1 = i;
+	y1 = j;
+	x2 = k;
+	y2 = l;
+	x = x1;
+	y = y1;
+	z1 = a;
+	z2 = b;
 
+	//hitung dx dan dy
+	dx = x2 - x1;
+	dy = y2 - y1;
+
+	//hitung steps
+	if (abs(dx) > abs(dy)) {
+		steps = abs(dx);
+	}
+	else steps = abs(dy);
+
+	//hitung perubahan nilai x (x_inc) dan y (y_inc)
+	x_inc = dx / (float) steps;
+	y_inc = dy / (float )steps;
+
+	//gambar titik awal
+	 glLineWidth(2.0);
+    glBegin(GL_LINES);
+	glVertex3i(round(x), round(y), z1); // gambar titik awal
+    glColor3f(0.0, 0.5, 1.0);
+    glVertex3f(-12, 57, 68);
+    glVertex3f(1, 0.2, 60);
+    glEnd();
+	//perulangan untuk menggambar titik-titik
+	do {
+		x += x_inc; // x = x + x_inc
+		y += y_inc; // y = y + y_inc
+		glVertex3i(round(x), round(y), z2); //gambar titik
+	} while (x < x2);
+
+
+	glFlush();
+}
+
+//void dda()
+//
+//
 //Dibawah ini dimulai koding untuk membuat object
 void tampilan(void){
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -219,6 +268,11 @@ glVertex3f(-26,-68,68);
 glVertex3f(-26,-64,68);
 glVertex3f(30,-64,68);
 glEnd();
+
+glBegin(GL_QUADS);
+glColor3f(0.99,0.99,0.99);
+dda(12, 57, 68, 30, 60, 90);
+
 glPushMatrix();
 glPopMatrix();
 glutSwapBuffers();
@@ -260,11 +314,14 @@ int main(int argc, char **argv){
     glutMainLoop();
 }
 
+//selesai
+
 //E1E121044_ADZA AULIA SALSABITA (MEMBUAT LIBRARY,BACKGROUND,DAN FUNGSI ESC)
 //E1E121042_TOGA ABDI HAYAT (MEMBUAT OBJECT KUBUS DAN FUNGSI GERAKAN MOUSE)
 //E1E121022_ANYA SALSABILA_MENGUBAH KUBUS MENJADI BALOK
 //E1E121072_MUHAMAD FADLI_MEMBUAT 3 POLIGON///
 //E1E121002_Fadit Al Fauzan_MEMBUAT LINGKARAN UNTUK TOMBOL POWER
-//E1E121098_Zahra Maharani Aulia_MEMBUAT Bingkai
+//E1E121098_Zahra Maharani Aulia_MEMBUAT Bingkai Dan Membuat Garis Menggunakan Algoritma DDA
 //E1E121072_MUHAMAD FADLI_MEMBUAT Animasi bergerak
 //E1E116098_Andi Sahrul Mubarak Merubah warna
+
