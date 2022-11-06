@@ -322,4 +322,4 @@ int main(int argc, char **argv){
 //E1E121098_Zahra Maharani Aulia_MEMBUAT Bingkai Dan Membuat Garis Menggunakan Algoritma DDA
 //E1E121072_MUHAMAD FADLI_MEMBUAT Animasi bergerak
 //E1E116098_Andi Sahrul Mubarak Merubah warna
-
+// naruto
