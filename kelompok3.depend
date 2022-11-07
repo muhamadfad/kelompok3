@@ -248,3 +248,10 @@
 	<string.h>
 	<stdlib.h>
 
+1667781477 source:e:\kuliah\semester 3\grafkom\kelompok3\main.cpp
+	<math.h>
+	<GL/glut.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
