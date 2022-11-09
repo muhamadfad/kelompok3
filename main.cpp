@@ -28,7 +28,7 @@ void lingkarang (int r, int a, int x_tgh, int y_tgh){
     glEnd();
 }
 
-
+//satu
 //Deklarasi fungsi Mouse agar gambar 3d dapat diputar putar menggunakan Mouse
 float xrot =0;
 float yrot = 0;
