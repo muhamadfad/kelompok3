@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #define PI 3.14
 
-
+//satu
 //Called when a key is pressed
 void handleKeypress(unsigned char key, int x, int y) {
     switch (key) {
